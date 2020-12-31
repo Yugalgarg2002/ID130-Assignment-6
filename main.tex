@@ -1,0 +1,35 @@
+\documentclass[12 pt, letterpaper, twoside]{article}
+
+\title{Logic Gate Representation 2.5B}
+
+\author{Yugal Garg}
+
+\usepackage{circuitikz}
+
+
+
+\begin{document}
+
+\maketitle
+
+\begin{circuitikz}
+ \draw
+(0,0)node[and port, number inputs=4, scale=2](1){1}
+    (1.in 1) node [anchor=east] {A}
+    (1.in 2) node [anchor=east] {B'}
+    (1.in 3) node [anchor=east] {C}
+    (1.in 4) node [anchor=east] {D'}
+(0,4)node[and port, number inputs=4, scale=2](2){2}
+    (2.in 1) node [anchor=east] {A'}
+    (2.in 2) node [anchor=east] {B}
+    (2.in 3) node [anchor=east] {C}
+    (2.in 4) node [anchor=east] {D'}
+(8,2)node[or port, scale=3](3){3}
+(1.out)--(3.in 1)
+(2.out)--(3.in 2);
+
+\end{circuitikz}
+
+{b = AB`CD` + A`BCD`} (2.5)
+
+\end{document}
